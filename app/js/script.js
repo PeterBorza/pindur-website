@@ -114,20 +114,6 @@ const section2PicturesMouseOut = () => {
 
 section2PicturesMouseOut();
 
-// JQUERY--------------------------------------------------- smoothscroll
-// ******
-$(document).ready(function (){
-	$('.nav-bar li').on('click', function(e) {
-		if(this.hash !== '') {
-			// e.preventDefault();
-	
-			const hash = this.hash;
-	
-			$('html, body').animate(
-				{
-					scrollTop: $(hash).offset().top
-				}, 2500
-			)
-		}
-	})
-});
+// ferdinandi smooth scroll. Npm in script.*************************
+const scroll = new SmoothScroll('main a[href*="#"]', { speed: 800 });
+// *****************************************************************
