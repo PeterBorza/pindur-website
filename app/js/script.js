@@ -71,9 +71,7 @@ const renderSectionTwoImages = () => images.map(renderImages);
 const renderImages = (item) => {
 	const img = document.createElement("img");
 	img.classList.add("box-img");
-	img.setAttribute("src", item.bw);
-	img.setAttribute("data-color", item.color);
-
+	img.setAttribute("src", item.color);
 	const imgBox = document.createElement("div");
 	imgBox.classList.add("img-box");
 	imgBox.append(img);
@@ -83,51 +81,8 @@ const renderImages = (item) => {
 
 secTwoPhotos();
 
-// section 2 images animation
-// *************************
 
-const section2PicturesMouseIn = () => {
-	const container = document.querySelector(".container2");
-	container.addEventListener("mouseover", (e) => {
-		const x = e.target;
-		const data = x.getAttribute("data-color");
-		const src = x.getAttribute("src");
-		x.setAttribute("src", data);
-		x.setAttribute("data-color", src);
-		// console.log(x.getAttribute('src'));
-	});
-};
 
-section2PicturesMouseIn();
-
-const section2PicturesMouseOut = () => {
-	const container = document.querySelector(".container2");
-	container.addEventListener("mouseout", (e) => {
-		const x = e.target;
-		const data = x.getAttribute("data-color");
-		const src = x.getAttribute("src");
-		x.setAttribute("src", data);
-		x.setAttribute("data-color", src);
-		// console.log(x.getAttribute('src'));
-	});
-};
-
-section2PicturesMouseOut();
-
-// JQUERY--------------------------------------------------- smoothscroll
-// ******
-$(document).ready(function (){
-	$('.nav-bar li').on('click', function(e) {
-		if(this.hash !== '') {
-			// e.preventDefault();
-	
-			const hash = this.hash;
-	
-			$('html, body').animate(
-				{
-					scrollTop: $(hash).offset().top
-				}, 2500
-			)
-		}
-	})
-});
+// ferdinandi smooth scroll. Npm in script.*************************
+const scroll = new SmoothScroll('main a[href*="#"]', { speed: 800 });
+// *****************************************************************
