@@ -1,0 +1,36 @@
+@import "./mixins";
+@import "./variables";
+
+
+#workshop {
+    @include centered;
+}
+
+.container2 {
+    position: relative;
+    width: 90%;
+    height: 60vh;
+    @include RAM(150px);
+    grid-gap: 0;
+}
+
+.img-box {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.box-img {
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    transition: all 200ms ease-in-out;
+    filter: grayscale(100%);
+    &:hover{
+        filter: grayscale(0%);
+        transform: scale(1.02);
+    }
+}
+
+
+

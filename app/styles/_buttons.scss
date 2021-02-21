@@ -1,0 +1,46 @@
+@import "./mixins";
+@import "./variables";
+
+.buttons {
+	grid-column: 7/11;
+	height: 10vh;
+    // border: $coral;
+	@include fAround(row);
+	// align-items: flex-end;
+}
+button {
+	position: relative;
+	width: 20%;
+	// padding: 10px;
+	font-size: 20px;
+	background-color: transparent;
+	color: white;
+	outline: none;
+	border: none;
+	// border: $red;
+	font-family: "Salsa", cursive;
+	cursor: pointer;
+	&::after{
+		content: "";
+		background-color: red;
+		position: absolute;
+		left: 10%;
+		bottom: 0px;
+		width: 80%;
+		height: 2px;
+
+		transform: scale(0);
+		transform-origin: center;
+		transition: transform 100ms ease-in;
+	}
+	&:hover::after{
+		transform: scale(1);
+		transform-origin: center;
+	}
+}
+
+		
+
+	
+	
+	

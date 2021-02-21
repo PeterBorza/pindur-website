@@ -1,0 +1,80 @@
+@mixin centered {
+    display: grid;
+    place-items: center;
+}
+
+@mixin flexWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; //child is flex: 1 1 <baseWidth>   or 0 1 <baseWidth> stand for flexgrow, flexshrink, and flex-basis
+}
+
+@mixin sideBar {
+    display: grid;
+    grid-template-columns: minmax(300px, 25%), 1fr;
+}
+
+@mixin headerMainFooter {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+@mixin headFooterAndBetween {
+    display: grid;
+    grid-template: auto 1fr auto/auto 1fr auto;
+    // header grcol 1/4   left-side grcol 1/2  main grcol 2/3  right-side 3/4  footer grcol 1/4
+}
+
+@mixin twelveColumnsGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    // children displayed with grid-column ex. 1/7, 2/5 etc.
+}
+
+@mixin RAM($basewidth) {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax($basewidth, 1fr));
+    // grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    // with auto-fill baseline does not increase !
+}
+
+@mixin lineUp($count) {
+    height: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat($count, 1fr);
+    // child : justify-content : space-between;
+    // flex-direction: column;
+}
+
+@mixin textStyle {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+@mixin fAround($direction) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: $direction;
+}
+@mixin fCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+@mixin fBetween($direction) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: $direction;
+}
+@mixin modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
